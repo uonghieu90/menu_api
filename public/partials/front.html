@@ -1,0 +1,48 @@
+<header id="header">
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href=""><img src="img/logo.png" alt="" title="" /></a>
+                  </div>
+                  <nav id="nav-menu-container">
+                  <ul class="top-level-menu">
+                        <li ng-repeat="data in con" ng-include="'menu_item_renderer.html'"></li>
+                    </ul>
+                  </nav><!-- #nav-menu-container -->                    
+                </div>
+            </div>
+ </header><!-- #header -->
+
+            <!-- start banner Area -->
+            <section class="banner-area">
+                <div class="container">
+                    <div class="row fullscreen align-items-center justify-content-between">
+                        <div class="col-lg-6 col-md-6 banner-left">
+                          
+                            <h1>Menu</h1>
+                            <p>
+                                Build multi menu
+                            </p>
+                            <a href="#" class="primary-btn text-uppercase">Back to menu edit</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 banner-right d-flex align-self-end">
+                            <img class="img-fluid" src="img/hero-img.png" alt="">
+                        </div>
+                    </div>
+                </div>                  
+            </section>
+            <!-- End banner Area -->
+
+        
+<script type="text/ng-template"  id="menu_item_renderer.html">
+    {{data.name}}
+                
+    <ul class={{(data.show<2)?'second-level-menu':'third-level-menu'}}>
+
+        <li ng-repeat="data in data.nodes" ng-include="'menu_item_renderer.html'"></li>
+    </ul>
+</script>
+
+<!-- <ul class="top-level-menu">
+    <li ng-repeat="data in con" ng-include="'menu_item_renderer.html'"></li>
+</ul> -->
